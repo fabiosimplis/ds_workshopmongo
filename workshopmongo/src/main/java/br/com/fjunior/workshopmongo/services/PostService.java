@@ -1,5 +1,7 @@
 package br.com.fjunior.workshopmongo.services;
 
+import java.time.Instant;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,5 +34,21 @@ public class PostService {
         // List<Post> list = repository.findByTitleContainingIgnoreCase(text);
         List<Post> list = repository.searchTitle(text);
         return list.stream().map(PostDTO::new).toList();
+    }
+
+    public List<PostDTO> fullSearch(String text, String start, String end){
+        Instant startMoment = convertMoment(start, Instant.MIN);
+        Instant endMoment = convertMoment(end, Instant.now());
+
+        List<Post> list = repository.fullSearch(text, startMoment, endMoment);
+        return list.stream().map(PostDTO::new).toList();
+    }
+
+    private Instant convertMoment(String instantTime, Instant alternative) {
+        try {
+            return Instant.parse(instantTime);
+        } catch (DateTimeParseException e) {
+            return alternative;
+        }
     }
 }
