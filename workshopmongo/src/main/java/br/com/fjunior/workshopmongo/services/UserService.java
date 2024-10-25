@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.fjunior.workshopmongo.models.dto.PostDTO;
 import br.com.fjunior.workshopmongo.models.dto.UserDTO;
 import br.com.fjunior.workshopmongo.models.entities.User;
 import br.com.fjunior.workshopmongo.repositories.UserRepository;
@@ -44,6 +45,11 @@ public class UserService {
     public void delete(String id) {
         getUserById(id);
         repository.deleteById(id);
+    }
+
+    public List<PostDTO> getPosts(String id) {
+        User user = getUserById(id);
+        return user.getPosts().stream().map(post -> new PostDTO(post)).toList();
     }
 
     private User getUserById(String id) {
