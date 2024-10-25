@@ -19,9 +19,6 @@ import br.com.fjunior.workshopmongo.models.dto.PostDTO;
 import br.com.fjunior.workshopmongo.models.dto.UserDTO;
 import br.com.fjunior.workshopmongo.services.UserService;
 
-
-
-
 @RestController
 @RequestMapping(value = "/users")
 public class UserController {
