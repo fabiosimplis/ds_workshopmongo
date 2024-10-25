@@ -1,5 +1,6 @@
 package br.com.fjunior.workshopmongo.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +28,8 @@ public class PostService {
         return post;
     }
 
+    public List<PostDTO> findByTitle(String text){
+        List<Post> list = repository.findByTitleContainingIgnoreCase(text);
+        return list.stream().map(PostDTO::new).toList();
+    }
 }
