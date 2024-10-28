@@ -5,7 +5,7 @@
 
 DSPost é uma aplicação back end web construída em conjunto ao curso **Java Spring Reference**, da plataforma [DevSuperior](https://devsuperior.com "Site da DevSuperior"), para estudo do springboot usando o banco NoSQL MongoDB
 
-O sistema consiste em um forum onde há posts e comnetários feitos por usuários.
+O sistema consiste em uma API de um forum onde há posts e comnetários feitos por usuários.
 
 ## Modelo conceitual
 ![Modelo Conceitual](https://github.com/fabiosimplis/ds_workshopmongo/blob/main/assets/modelo_conceitual.png).
