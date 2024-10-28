@@ -8,7 +8,7 @@ DSPost é uma aplicação back end web construída em conjunto ao curso **Java S
 O sistema consiste em um forum onde há posts e comnetários feitos por usuários.
 
 ## Modelo conceitual
-![Modelo Conceitual]().
+![Modelo Conceitual](https://github.com/fabiosimplis/ds_workshopmongo/blob/main/assets/modelo_conceitual.png).
 
 # Tecnologias utilizadas
 ## Back end
@@ -24,10 +24,10 @@ Pré-requisitos: Java 17
 
 ```bash
 # clonar repositório
-git clone 
+git clone (https://github.com/fabiosimplis/ds_workshopmongo.git)
 
 # entrar na pasta do projeto back end
-cd dslearn
+cd ds_workshopmongo
 
 # executar o projeto
 ./mvnw spring-boot:run
